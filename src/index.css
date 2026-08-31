@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@layer base {
+  :root,
+  [data-theme="eggshell"] {
+    --theme-primary: #3b1f54;
+    --theme-neon: #c084fc;
+    --theme-neon-bg: #9333ea;
+    --theme-neon-text: #ffffff;
+    --theme-primary-dim: #581c87;
+    --theme-primary-faint: rgba(147, 51, 234, 0.08);
+    --theme-glow: none;
+    --theme-bg: #f8f6f0;
+    --theme-panel-bg: #ffffff;
+    --theme-panel-header: #f4eee2;
+    --theme-border: #ded7c6;
+    --theme-border-bright: #b5a994;
+    --theme-text-main: #1f201e;
+    --theme-text-muted: #615c53;
+    --theme-text-bright: #3b1f54;
+    --theme-code-bg: #fefdf9;
+  }
+
+  [data-theme="palegrey"] {
+    --theme-primary: #1e1b4b;
+    --theme-neon: #c084fc;
+    --theme-neon-bg: #8b5cf6;
+    --theme-neon-text: #ffffff;
+    --theme-primary-dim: #312e81;
+    --theme-primary-faint: rgba(139, 92, 246, 0.06);
+    --theme-glow: none;
+    --theme-bg: #f3f4f6;
+    --theme-panel-bg: #ffffff;
+    --theme-panel-header: #ebedf0;
+    --theme-border: #d1d5db;
+    --theme-border-bright: #9ca3af;
+    --theme-text-main: #1f2937;
+    --theme-text-muted: #4b5563;
+    --theme-text-bright: #1e1b4b;
+    --theme-code-bg: #fbfcfd;
+  }
+
+  [data-theme="warmparchment"] {
+    --theme-primary: #3b1f54;
+    --theme-neon: #e879f9;
+    --theme-neon-bg: #d946ef;
+    --theme-neon-text: #ffffff;
+    --theme-primary-dim: #701a75;
+    --theme-primary-faint: rgba(217, 70, 239, 0.08);
+    --theme-glow: none;
+    --theme-bg: #f3ebdc;
+    --theme-panel-bg: #faf5ea;
+    --theme-panel-header: #e8dcc6;
+    --theme-border: #d6c6ac;
+    --theme-border-bright: #b8a383;
+    --theme-text-main: #2a1a0c;
+    --theme-text-muted: #695642;
+    --theme-text-bright: #3b1f54;
+    --theme-code-bg: #fbf7ed;
+  }
+
+  body {
+    background-color: var(--theme-bg);
+    color: var(--theme-text-main);
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    min-height: 100vh;
+  }
+}
+
+/* CRT Scanline Effect */
+.crt-scanlines {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0) 50%, 
+    rgba(140, 120, 100, 0.04) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+/* Terminal text glow */
+.term-glow {
+  text-shadow: var(--theme-glow);
+}
+
+.term-box {
+  background-color: var(--theme-panel-bg);
+  border: 1px solid var(--theme-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.term-box-bright {
+  border-color: var(--theme-border-bright);
+}
+
+/* Custom Scrollbar for Terminals */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--theme-bg);
+  border-left: 1px solid var(--theme-border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--theme-border-bright);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-primary);
+}
+
+/* Blinking Cursor Keyframes */
+@keyframes term-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.animate-term-blink {
+  animation: term-blink 0.9s infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s infinite ease-in-out;
+}
+

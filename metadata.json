@@ -1,0 +1,6 @@
+{
+  "name": "Traffic Intelligence API Test Console",
+  "description": "A high-tech ASCII terminal and command-line test harness for evaluating backend Traffic Intelligence GenAI pipelines.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
