@@ -8,6 +8,11 @@ Instead of simply reporting *where traffic is*, Road Aware reasons about **where
 
 > **Detect the road. Predict the impact. Alert only when it matters.**
 
+
+▶️ **Watch the 2-minute demo:** https://youtu.be/ww82tdRlGk8
+
+The video demonstrates the complete Road Aware pipeline, from simulated crowdsourced vehicle telemetry through traffic-event detection, Pinecone historical memory, Gemini reasoning, and the deployed Google Cloud Run API.
+
 ---
 
 ## 🌐 Live Demo
